@@ -11,7 +11,7 @@ getgenv().Howl = {
         Style = "Back",
         Direction = "Inout",
 
-        TargetPart = "HumanoidRootPart",
+        TargetPart = "HumanoidRootPart ",
     
     },
     ['HitBox'] = {
