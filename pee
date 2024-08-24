@@ -11,11 +11,11 @@ getgenv().Howl = {
         Style = "Back",
         Direction = "Inout",
 
-        TargetPart = "Head",
+        TargetPart = "HumanoidRootPart",
     
     },
     ['HitBox'] = {
-        Part = "Head",
+        Part = "HumanoidRootPart",
     },
     ['Resolver'] = {
         Enabled = true,
@@ -348,4 +348,3 @@ else
         Duration = 0.001
     })
 end
-
