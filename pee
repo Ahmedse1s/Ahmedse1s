@@ -1,6 +1,6 @@
 getgenv().Howl = {
     Aimbot = {
-        Keybind = Enum.KeyCode.C,
+        Keybind = Enum.KeyCode.q,
         AimBotSkid = 0.187,
         Prediction = 0.1247724521,
 
@@ -11,11 +11,11 @@ getgenv().Howl = {
         Style = "Back",
         Direction = "Inout",
 
-        TargetPart = "HumanoidRootPart",
+        TargetPart = "Head",
     
     },
     ['HitBox'] = {
-        Part = "HumanoidRootPart",
+        Part = "Head",
     },
     ['Resolver'] = {
         Enabled = true,
@@ -54,7 +54,7 @@ getgenv().Howl = {
     },
     
     ['Macro'] = {
-        Enabled = false,
+        Enabled = True,
         Keybind = "x",
         Speed = 0.0200,
         Type = "Third", -- "First", "Third"
