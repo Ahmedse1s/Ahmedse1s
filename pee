@@ -15,7 +15,7 @@ getgenv().Howl = {
     
     },
     ['HitBox'] = {
-        Part = "HumanoidRootPart ",
+        Part = "HumanoidRootPart",
     },
     ['Resolver'] = {
         Enabled = true,
