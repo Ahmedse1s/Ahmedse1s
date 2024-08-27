@@ -1,0 +1,69 @@
+-- Combined Aimbot and ESP Script with Toggle Keys
+local aimbotEnabled = false
+local espEnabled = false
+
+while wait(0.1) do
+    -- Get the player's character
+    local character = game.Players.LocalPlayer.Character
+    
+    -- Get the camera
+    local camera = game.Workspace.CurrentCamera
+    
+    -- Get the mouse position
+    local mousePosition = camera.CFrame.LookVector * 100
+    
+    -- Aim at the mouse position
+    if aimbotEnabled then
+        character.HumanoidRootPart.CFrame = camera.CFrame * CFrame.new(mousePosition)
+    end
+    
+    -- Check if the 'q' key is pressed to enable aimbot
+    if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Q) then
+        aimbotEnabled = true
+    -- Check if the 'q' key is pressed to disable aimbot
+    elseif game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Q) then
+        aimbotEnabled = false
+    end
+    
+    -- Draw boxes and names for ESP
+    if espEnabled then
+        -- Get all players in the game
+        for _, player in pairs(game.Players:GetPlayers()) do
+            -- Get the player's character
+            local playerCharacter = player.Character
+            
+            -- Check if the player's character exists
+            if playerCharacter then
+                -- Get the player's name
+                local playerName = player.Name
+                
+                -- Draw a box around the player's character
+                local box = Instance.new("Box")
+                box.Size = Vector3.new(10, 10, 10)
+                box.Position = playerCharacter.HumanoidRootPart.Position
+                box.Anchored = true
+                box.Parent = game.Workspace
+                
+                -- Draw the player's name above the box
+                local text = Instance.new("TextLabel")
+                text.Text = playerName
+                text.Position = playerCharacter.HumanoidRootPart.Position + Vector3.new(0, 10, 0)
+                text.Size = Vector3.new(100, 20)
+                text.BackgroundTransparency = 1
+                text.Parent = game.Workspace
+                
+                -- Wait for 1 second before removing the box and text
+                wait(1)
+                box:Destroy()
+                text:Destroy()
+            end
+        end
+    end
+    
+    -- Check if the 't' key is pressed to enable ESP
+    if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.T) then
+        espEnabled = true
+    -- Check if the 'r' key is pressed to disable ESP
+    elseif game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.T) then
+        espEnabled = false
+    end
