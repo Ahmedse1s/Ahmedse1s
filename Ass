@@ -11,11 +11,11 @@ getgenv().Howl = {
         Style = "Back",
         Direction = "Inout",
 
-        TargetPart = "HumanoidRootPart",
+        TargetPart = "UpperTorso",
     
     },
     ['HitBox'] = {
-        Part = "HumanoidRootPart",
+        Part = "UpperTorso",
     },
     ['Resolver'] = {
         Enabled = true,
@@ -45,7 +45,7 @@ getgenv().Howl = {
     },
     ['Air'] = {
         Enabled = true,
-        AirPart = "Head",
+        AirPart = "UpperTorso",
     },
     ['Checks'] = {
         TargetDeath = true,
